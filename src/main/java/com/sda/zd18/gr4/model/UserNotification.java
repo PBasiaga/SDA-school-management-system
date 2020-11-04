@@ -5,18 +5,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table
+@Table(name = "usernotifications")
 public class UserNotification {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private Notification Notification;
-    private Notification seenNotification;
+
+    private List<Notification> Notifications;
+
+    private List<Notification> seenNotification;
 }

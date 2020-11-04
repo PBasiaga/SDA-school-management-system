@@ -24,4 +24,8 @@ public class BlockOfClasses {
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "blockOfClasses")
     private Set<Lesson> lessons = new HashSet<>();
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "course_id")
+    private Course course;
+
 }

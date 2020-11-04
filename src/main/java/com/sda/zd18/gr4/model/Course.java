@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -18,6 +19,8 @@ public class Course {
     private Long id;
 
     private String name;
-    private BlockOfClasses blockOfClasses;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "course")
+    private Set<BlockOfClasses> blockOfClasses;
 
 }

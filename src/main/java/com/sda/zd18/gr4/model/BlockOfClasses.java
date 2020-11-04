@@ -5,7 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -19,6 +20,8 @@ public class BlockOfClasses {
     private Long id;
 
     private String name;
-    private List<Lesson> lessons;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "blockOfClasses")
+    private Set<Lesson> lessons = new HashSet<>();
 
 }

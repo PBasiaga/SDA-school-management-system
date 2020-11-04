@@ -20,4 +20,8 @@ public class Lesson {
 
     private String subject;
     private Date date;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "blockofclasses_id")
+    private BlockOfClasses blockOfClasses;
 }

@@ -20,4 +20,9 @@ public class Notification {
     private String subject;
     private String contents;
 
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "lesson_id")
+    private Lesson lesson;
+
 }

@@ -19,8 +19,15 @@ public class UserEntry {
     @GeneratedValue
     private Long id;
 
-
-    private User user;
     private Date date;
+
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "course_id")
     private Course course;
+
 }

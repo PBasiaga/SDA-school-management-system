@@ -33,5 +33,5 @@ build/
 .vscode/
 
 
-### SPRING PROPERTIES ###
-resources/
+### APPLICATION PROPETIES ###
+src/main/resources/

@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -25,6 +26,9 @@ public class User {
     private String password;
     private UserType userType;
     private Boolean isActive;
+
+    @ManyToMany
+    private Set<Course> courses;
 
 
 }

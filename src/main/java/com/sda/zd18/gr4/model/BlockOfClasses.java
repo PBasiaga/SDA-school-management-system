@@ -12,7 +12,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "blocksofclasses")
+@Table(name = "blocks_of_classes")
 public class BlockOfClasses {
 
     @Id
